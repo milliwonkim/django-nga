@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+NGA Home
+{% endblock %}
+
+{% block contents %}
+
+<!--  -->
+
+<!--  -->
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-lg-4 col-md-6 col-sm-12" style="margin: 5px 0;">
+      <a href="{% url 'front_main' %}" class="card h-100">
+        <img src="{% static 'blogapp/img/front_gate.jpg' %}" class="card-img-top" alt="front_gate">
+        <div class="card-body">
+          <h5 class="card-title">정문</h5>
+          <p class="card-text">정문</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-sm-12" style="margin: 5px 0;">
+      <a href="{% url 'front_main' %}" class="card h-100">
+        <img src="{% static 'blogapp/img/back_gate.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">후문</h5>
+          <p class="card-text">후문</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-sm-12" style="margin: 5px 0;">
+      <a href="{% url 'front_main' %}" class="card h-100">
+        <img src="{% static 'blogapp/img/dorm.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">기숙사</h5>
+          <p class="card-text">기숙사</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-sm-12" style="margin: 5px 0;">
+      <a href="{% url 'front_main' %}" class="card h-100">
+        <img src="{% static 'blogapp/img/etc.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">기타</h5>
+          <p class="card-text"></p>
+        </div>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<!--  -->
+<!--
+<div class="row row-cols-1 row-cols-md-4">
+  <div class="col mb-4">
+    <a href="{% url 'front_main' %}" class="card h-100">
+      <img src="{% static 'blogapp/img/front_gate.jpg' %}" class="card-img-top" alt="front_gate">
+      <div class="card-body">
+        <h5 class="card-title">정문</h5>
+        <p class="card-text">정문</p>
+      </div>
+    </a>
+  </div>
+  <div class="col mb-4">
+    <div class="card h-100">
+      <img src="{% static 'blogapp/img/back_gate.jpg' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">후문</h5>
+        <p class="card-text">후문</p>
+      </div>
+    </div>
+  </div>
+  <div class="col mb-4">
+    <div class="card h-100">
+      <img src="{% static 'blogapp/img/dorm.jpg' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">기숙사</h5>
+        <p class="card-text">기숙사</p>
+      </div>
+    </div>
+  </div>
+  <div class="col mb-4">
+    <div class="card h-100">
+      <img src="{% static 'blogapp/img/etc.jpg' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">기타</h5>
+        <p class="card-text"></p>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+{% endblock %}

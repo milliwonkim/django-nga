@@ -1,0 +1,14 @@
+<div class="row" style="margin-bottom : 15px">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{detail.start}}</h5>
+          <h5 class="card-title">{{detail.dest}}</h5>
+          <p class="card-text">{{detail.body}}</p>
+          <a href="{% url 'front_edit' detail.id%}" class="btn btn-primary">수정하기</a>
+    <a href="{% url 'delete' detail.id%}" class="btn btn-primary">삭제하기</a> 
+        </div>
+      </div>
+    </div>
+       
+  </div>

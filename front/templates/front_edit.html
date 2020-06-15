@@ -1,0 +1,24 @@
+<div class="containter">
+    <form action="{% url 'front_update' front.pk %}" method='POST'>
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="exampleInputEmail1">start</label>
+          <input class="form-control" name="start" value="{{front.start}}">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">destination</label>
+            <input class="form-control" name="dest" value="{{front.dest}}">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">title</label>
+            <input class="form-control" name="title" value="{{front.title}}">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">body</label>
+            <input class="form-control" name="body" value="{{front.body}}">
+          </div>
+          <input type="submit" class="btn btn-primary" value="Update"> 
+        <a href="{% url 'front_delete' front.pk %}"><input class="btn btn-primary" value="Delete"></a>
+      </form>
+</div>
+

@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+<div class="containter">
+
+    <form action="{% url 'front_create'%}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="exampleInputEmail1">start</label>
+          <select class="form-control" name="start">
+            <option value="중앙대 정문">
+              중앙대 정문
+            </option>
+            <option value="중앙대 후문">
+              중앙대 후문
+            </option>
+            <option value="상도역 5번 출구">
+              상도역 5번 출구
+            </option>
+            <option value="흑석역">
+              흑석역
+            </option>
+            <option value="중앙대병원">
+              중앙대병원
+            </option>
+          </select>
+          <!-- <input class="form-control" type="text" name='start'> -->
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">destination</label>
+            <select class="form-control" name="dest">
+              <option value="중앙대 정문">
+                중앙대 정문
+              </option>
+              <option value="중앙대 후문">
+                중앙대 후문
+              </option>
+              <option value="상도역 5번 출구">
+                상도역 5번 출구
+              </option>
+              <option value="흑석역">
+                흑석역
+              </option>
+              <option value="중앙대병원">
+                중앙대병원
+              </option>
+            </select>
+            <!-- <input class="form-control" type="text" name='dest'> -->
+
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">title</label>
+            <input class="form-control" type="text" name='title'>
+
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">body</label>
+            <input class="form-control" type="text" name='body'>
+
+          </div>
+          <input class ="btn btn-info" type="submit" value = "submit">
+
+      </form>
+</div>
+{% endblock %}
