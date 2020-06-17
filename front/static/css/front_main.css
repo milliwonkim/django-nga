@@ -1,0 +1,17 @@
+.card-body .road-to-detail {
+    padding: 10px;
+}
+
+.card-body .road-to-detail:hover {
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px #95a5a6;
+    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    -o-transform: scale(1.02);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
