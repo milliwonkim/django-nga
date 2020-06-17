@@ -1,32 +1,143 @@
-
-
-
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-crossorigin="anonymous"></script>
-
-<link rel=“stylesheets” type=“text/css” href=“/css/style.css”>
-
 {% load static %}
 
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="loginpage">
-    <div class="container">
-        <form action="{% url 'login' %}" method="POST">
-            {% csrf_token %}
-            ID: <input name="username">
-            <br>
-            PW: <input name="password" type="password">
-            <input type="submit" value="LOGIN" class="btn btn-success">
-            <a href="{% url 'signup' %}" class="btn btn-primary">가입하기</a>
-        </form>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel=“stylesheet” href="{% static 'css/login.css' %}" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+
+<style>
+    body {
+        background-image: url('{% static "img/base_img.jpg" %}');
+    }
+</style>
+
+    <title>Login</title>
+    <style>
+        body {
+            background-image: url('{% static "img/login_page.jpg" %}');
+        }
+
+        .login {
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 25px;
+            text-align: center;
+            /* color: white; */
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-div {
+            border: none;
+            border-radius: 20px;
+            padding: 70px 30px;
+            background-color: white;
+            box-shadow: 3px 3px 6px #40739e;
+        }
+
+        .form-control {
+            height: 60px;
+            text-align: center;
+        }
+
+        .form-group {
+            width: 400px;
+            padding: 20px 0;
+        }
+
+        .login-button {
+            width: 90px;
+            margin: 10px 0 0 10px;
+        }
+
+        .signup-button {
+            width: 90px;
+            margin: 10px 10px 0 0;
+        }
+
+        .login-button:hover {
+            transform: scale(1.1);
+        }
+
+        .signup-button:hover {
+            transform: scale(1.1);
+        }
+        
+        a:hover {
+            text-decoration: none;
+        }
+
+        .buttons {
+            font-size: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .login-font {
+            color: white;
+        }
+
+        .login-font-div {
+            display: flex;
+            align-items: center;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container login">
+        <div class="login-font-div">
+            <h1 class="login-font">LOGIN</h1>
+        </div>
+        <div class="login-div">
+            <form action="{% url 'login' %}" method="POST">
+                {% csrf_token %}
+
+                <div class="form-group">
+                    <!-- <label for="exampleInputEmail1">USERNAME</label> -->
+                    <input type="text" name="username" placeholder="USERNAME" class="form-control" id="exampleInputEmail1"
+                        aria-describedby="emailHelp">
+                </div>
+                <div class="form-group">
+                    <!-- <label for="exampleInputPassword1">PASSWORD</label> -->
+                    <input type="password" placeholder="PASSWORD" name="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="buttons">
+                    <div>
+                        <a href="{% url 'signup' %}" class="btn btn-primary signup-button">SIGNUP</a>
+                    </div>
+                    <div>
+                        <input class="login-button btn btn-info" type="submit" value="LOGIN">
+                    </div>
+                </div>
+
+                <!-- ID: <input name="username"> -->
+                <!-- <br>
+                    PW: <input name="password" type="password">
+                -->
+            </form>
+        </div>
     </div>
-</div>
+</body>
+
+</html>

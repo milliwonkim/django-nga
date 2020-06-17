@@ -1,15 +1,35 @@
 {% extends "base.html" %}
 
+{% block head %}
+<style>
+    li {
+        list-style-type: none;
+        color: black;
+        font-size: 20px;
+    }
+
+    .subnavilist {
+        margin: 20px 0;
+    }
+</style>
+{% endblock %}
+
 {% load i18n %}
 
 {% block sidebar %}
 
-<h5>hello</h5>
-<ul class="subnavilist">
-    <li><a href="{% url 'messages_inbox' %} ">&raquo;&nbsp;{% trans "Inbox" %}</a></li>
-    <li><a href="{% url 'messages_outbox' %} ">&raquo;&nbsp;{% trans "Sent Messages" %}</a></li>
-    <li><a href="{% url 'messages_compose' %} ">&raquo;&nbsp;{% trans "New Message" %}</a></li>
-    <li><a href="{% url 'messages_trash' %} ">&raquo;&nbsp;{% trans "Trash" %}</a></li>
-</ul>
+<!-- <h5>hello</h5> -->
+<div class="inbox">
+    <ul class="subnavilist">
+        <!-- <li><a href="{% url 'messages_inbox' %} ">&raquo;&nbsp;{% trans "Inbox" %}</a></li>
+        <li><a href="{% url 'messages_outbox' %} ">&raquo;&nbsp;{% trans "Sent Messages" %}</a></li>
+        <li><a href="{% url 'messages_compose' %} ">&raquo;&nbsp;{% trans "New Message" %}</a></li>
+        <li><a href="{% url 'messages_trash' %} ">&raquo;&nbsp;{% trans "Trash" %}</a></li> -->
+        <li><a href="{% url 'messages_inbox' %} " style="color: black;">{% trans "Inbox" %}</a></li>
+        <li><a href="{% url 'messages_outbox' %} " style="color: black;">{% trans "Sent Messages" %}</a></li>
+        <li><a href="{% url 'messages_compose' %} " style="color: black;">{% trans "New Message" %}</a></li>
+        <li><a href="{% url 'messages_trash' %} " style="color: black;">{% trans "Trash" %}</a></li>
+    </ul>
+</div>
 
 {% endblock %}

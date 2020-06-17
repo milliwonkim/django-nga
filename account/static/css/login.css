@@ -1,0 +1,11 @@
+body {
+    background-image: url('img/login_page.jpg') no-repeat;
+}
+
+.container .login {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
